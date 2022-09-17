@@ -1,0 +1,52 @@
+body{
+    background-color: #F2EDD7;
+    color: #153849;
+}
+
+#image {
+    width: 70%;
+    border-radius: 20%;
+}
+
+small{
+    font-size: 20px;
+}
+
+.header,
+h2 {
+    padding: 2%;
+    margin-bottom: 5%;
+    font-weight: bold;
+    color: #153849;
+}
+
+.col-sm{
+    margin-bottom: 10%;
+}
+button{
+    margin: 1%;
+    padding: 1%;
+    border: none;
+    color: #EEEEEE;
+    background-color: #11698E;
+    border-radius: 10%;
+}
+
+.checkedType,
+.checkedValue {
+    background-color: #C2E8CE;
+    color: #153849;
+}
+
+.section{
+    margin-bottom: 10%;
+}
+
+.imageButton,
+.imageButton a{
+    background-color: #ffffff;
+    margin: 2%;
+    width: 30%;
+    color: #153849;
+    text-decoration: none;
+}
