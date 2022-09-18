@@ -10,6 +10,8 @@ import ImageSection from './ImageSection';
 function ChoicesSection()
 {
 
+    console.log("im here")
+
     function init(){
 
         const requestOptions = {
