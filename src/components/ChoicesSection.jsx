@@ -23,8 +23,11 @@ function ChoicesSection()
         try{
 
         fetch('/app',requestOptions)
-          .then(response => response.json())
+          .then((response) => {
+            console.log("inside then1")
+            response.json()})
           .then((data) => {
+            console.log("inside then2")
               setAllChoices(data)
               let tempTypes=Object.keys(data)
               setTypes(tempTypes)
