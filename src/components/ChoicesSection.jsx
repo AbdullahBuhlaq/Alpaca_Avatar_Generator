@@ -20,6 +20,8 @@ function ChoicesSection()
             body: JSON.stringify({ title: 'React POST Request Example' })
         };
 
+        try{
+
         fetch('/app',requestOptions)
           .then(response => response.json())
           .then((data) => {
@@ -40,6 +42,10 @@ function ChoicesSection()
         
 
           })
+        }catch(error){
+            console.log("error")
+            console.log(error)
+        }
     }
 
     const [allChoices,setAllChoices] = useState(()=>{init()},{}),
