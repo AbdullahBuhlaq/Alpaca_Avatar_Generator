@@ -10,7 +10,6 @@ import ImageSection from './ImageSection';
 function ChoicesSection()
 {
 
-    console.log("im here")
 
     function init(){
 
@@ -27,7 +26,7 @@ function ChoicesSection()
             console.log("inside then1")
             response.json()})
           .then((data) => {
-            console.log("inside then2")
+            console.log(data)
               setAllChoices(data)
               let tempTypes=Object.keys(data)
               setTypes(tempTypes)
