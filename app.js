@@ -5,13 +5,13 @@ const { resolve } = require("path");
 const app = express();
 const path = require("path");
 const port = process.env.PORT || 5000;
-
+console.log("hihihihih");
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("build"));
   app.get("/", (req, res) => {
     res.sendfile(path, resolve(path, "build", "index.html"));
   });
-  app.post("/", async (req, res) => {
+  app.post("/app", async (req, res) => {
     let result = {};
 
     let x = await fs.readdir("alpaca");
