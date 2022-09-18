@@ -11,17 +11,16 @@ if (process.env.NODE_ENV === "production") {
     res.sendfile(path, resolve(__dirname, "/build", "index.html"));
   });
   app.post("/getType", async (req, res) => {
-    // let result = {};
+    let result = {};
 
-    // let x = await fs.readdir(__dirname + "/build/alpaca");
+    let x = await fs.readdir(__dirname + "/build/alpaca");
 
-    // for (let i = 0; i < x.length; i++) {
-    //   let value = await fs.readdir(__dirname + "/build/alpaca/" + x[i]);
-    //   result = { ...result, [x[i]]: value };
-    // }
+    for (let i = 0; i < x.length; i++) {
+      let value = await fs.readdir(__dirname + "/build/alpaca/" + x[i]);
+      result = { ...result, [x[i]]: value };
+    }
 
-    // res.send(result);
-    res.send({ id: 3 });
+    res.send(result);
   });
 } else {
   app.use(express.static("build"));
@@ -29,17 +28,16 @@ if (process.env.NODE_ENV === "production") {
     res.sendfile(path, resolve(__dirname, "/build", "index.html"));
   });
   app.post("/getType", async (req, res) => {
-    // let result = {};
+    let result = {};
 
-    // let x = await fs.readdir(__dirname + "/build/alpaca");
+    let x = await fs.readdir(__dirname + "/build/alpaca");
 
-    // for (let i = 0; i < x.length; i++) {
-    //   let value = await fs.readdir(__dirname + "/build/alpaca/" + x[i]);
-    //   result = { ...result, [x[i]]: value };
-    // }
+    for (let i = 0; i < x.length; i++) {
+      let value = await fs.readdir(__dirname + "/build/alpaca/" + x[i]);
+      result = { ...result, [x[i]]: value };
+    }
 
-    // res.send(result);
-    res.send({ id: 3 });
+    res.send(result);
   });
 }
 app.listen(port, () => {
