@@ -72,12 +72,15 @@ function ChoicesSection()
         
     }
 
-    const [allChoices,setAllChoices] = useState(()=>{init()},{}),
-          [types,setTypes] = useState([]),
-          [values,setValues] = useState([]),
-          [image,setImage] = useState({}),
-          [currentType,setCurrentType]=useState(""),
-          [currentValue,setCurrentValue]=useState("")
+    const [allChoices,setAllChoices] = useState({
+        accessories:["earings.png","flower.png"],
+        backgrounds:["blue50.png","blue60.png"]
+    }),
+          [types,setTypes] = useState(["accessories","backgrounds"]),
+          [values,setValues] = useState(["earings.png","flower.png"]),
+          [image,setImage] = useState({accessories:"earings.png"}),
+          [currentType,setCurrentType]=useState("accessories"),
+          [currentValue,setCurrentValue]=useState("earings")
 
     useEffect(()=>{
          if(image && Object.keys(image) && Object.keys(image).length) mergeImages([image.backgrounds,image.neck,image.hair,image.ears,image.eyes,image.leg,image.mouth,image.nose,image.accessories])
