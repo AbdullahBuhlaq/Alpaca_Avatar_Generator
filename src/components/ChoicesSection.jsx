@@ -83,7 +83,7 @@ function ChoicesSection()
           [currentValue,setCurrentValue]=useState("earings")
 
     useEffect(()=>{
-         if(image && Object.keys(image) && Object.keys(image).length) mergeImages([image.backgrounds,image.neck,image.hair,image.ears,image.eyes,image.leg,image.mouth,image.nose,image.accessories])
+         if(image && Object.keys(image) && Object.keys(image).length) mergeImages([image.backgrounds,image.accessories])
         .then((b64) => {
             document.getElementById('image').src = b64
             document.getElementById('link').href = b64
