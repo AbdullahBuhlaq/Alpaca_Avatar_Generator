@@ -13,21 +13,12 @@ function ChoicesSection()
 
     function init(){
 
-        const requestOptions = {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ title: 'React POST Request Example' })
-        };
+        let data={
+            accessories:["earings.png","flower.png"],
+            backgrounds:["blue50.png","blue60.png"]
+        }
 
-        try{
-
-        fetch('/app',requestOptions)
-          .then((response) => {
-            console.log("inside then1")
-            response.json()})
-          .then((data) => {
-            console.log(data)
-              setAllChoices(data)
+        setAllChoices(data)
               let tempTypes=Object.keys(data)
               setTypes(tempTypes)
               setCurrentType(tempTypes[0])
@@ -41,13 +32,44 @@ function ChoicesSection()
               if(item===currentType) setCurrentValue(cand.substring(0,cand.lastIndexOf('.')))
               setImage(tempImage)
               })
+
+        // const requestOptions = {
+        //     method: 'POST',
+        //     headers: { 'Content-Type': 'application/json' },
+        //     body: JSON.stringify({ title: 'React POST Request Example' })
+        // };
+
+        // try{
+
+        // fetch('/app',requestOptions)
+        //   .then((response) => {
+        //     console.log("inside then1")
+        //     response.json()})
+        //   .then((data) => {
+        //     console.log(data)
+        //       setAllChoices(data)
+        //       let tempTypes=Object.keys(data)
+        //       setTypes(tempTypes)
+        //       setCurrentType(tempTypes[0])
+        //       setValues(data[tempTypes[0]])
+            
+        //       let tempImage={}
+        //       tempTypes.forEach((item)=>{
+        //       const rand=Math.floor(Math.random()*data[item].length)
+        //       const cand=data[item][rand]
+        //       tempImage[item]="alpaca/"+item+"/"+cand
+        //       if(item===currentType) setCurrentValue(cand.substring(0,cand.lastIndexOf('.')))
+        //       setImage(tempImage)
+        //       })
         
 
-          })
-        }catch(error){
-            console.log("error")
-            console.log(error)
-        }
+        //   })
+        // }catch(error){
+        //     console.log("error")
+        //     console.log(error)
+        // }
+
+        
     }
 
     const [allChoices,setAllChoices] = useState(()=>{init()},{}),
