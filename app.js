@@ -21,7 +21,7 @@ if (process.env.NODE_ENV === "production") {
       result = { ...result, [x[i]]: value };
     }
 
-    res.send(result);
+    res.send({ resulsdt: "sdfsdf" });
   });
 }
 app.listen(port, () => {
