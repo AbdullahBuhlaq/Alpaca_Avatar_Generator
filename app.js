@@ -11,7 +11,7 @@ if (process.env.NODE_ENV === "production") {
   app.get("/", (req, res) => {
     res.sendfile(path, resolve(path, "build", "index.html"));
   });
-  app.post("/getType", async (req, res) => {
+  app.post("/", async (req, res) => {
     let result = {};
 
     let x = await fs.readdir("alpaca");

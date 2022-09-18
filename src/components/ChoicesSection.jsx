@@ -18,7 +18,7 @@ function ChoicesSection()
             body: JSON.stringify({ title: 'React POST Request Example' })
         };
 
-        fetch('/getType',requestOptions)
+        fetch('/',requestOptions)
           .then(response => response.json())
           .then((data) => {
               setAllChoices(data)
