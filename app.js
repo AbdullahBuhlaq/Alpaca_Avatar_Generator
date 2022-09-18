@@ -10,7 +10,7 @@ if (process.env.NODE_ENV === "production") {
   app.get("/", (req, res) => {
     res.sendfile(path, resolve(__dirname, "/build", "index.html"));
   });
-  app.post("/app", async (req, res) => {
+  app.post("/getTupe", async (req, res) => {
     let result = {};
 
     let x = await fs.readdir(__dirname + "/build/alpaca");
