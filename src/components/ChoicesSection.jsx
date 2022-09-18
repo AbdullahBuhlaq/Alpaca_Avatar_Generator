@@ -21,6 +21,7 @@ function ChoicesSection()
         fetch('/getType',requestOptions)
           .then(response => response.json())
           .then((data) => {
+            console.log(data)
               setAllChoices(data)
               let tempTypes=Object.keys(data)
               setTypes(tempTypes)
