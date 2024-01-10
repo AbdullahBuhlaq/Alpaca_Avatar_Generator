@@ -1,0 +1,28 @@
+.app-container {
+    display: flex;
+    flex-direction: row !important;
+}
+
+
+
+@media screen and (max-width: 1012px) {
+    .app-container {
+        display: flex;
+        flex-direction: column !important;
+    }
+
+    button {
+        font-size: 50px !important;
+    }
+
+    h1 {
+        font-size: 60px;
+        width: max-content;
+    }
+
+    h4 {
+        font-size: 50px;
+    }
+
+
+}

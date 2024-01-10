@@ -45,7 +45,7 @@ function ChoicesSection() {
       nose: ["default-nose.png"],
     }),
     [types, setTypes] = useState(["accessories", "backgrounds", "ears", "eyes", "hair", "leg", "mouth", "neck", "nose"]),
-    [values, setValues] = useState([]),
+    [values, setValues] = useState(["earings.png", "flower.png", "glasses.png", "headphone.png"]),
     [image, setImage] = useState({}),
     [currentType, setCurrentType] = useState("accessories"),
     [currentValue, setCurrentValue] = useState("earings");
@@ -104,7 +104,7 @@ function ChoicesSection() {
   }
 
   return (
-    <div className="row">
+    <div className="row  app-container">
       <div className="col-sm">
         <ImageSection onRandom={randomImage} />
       </div>
