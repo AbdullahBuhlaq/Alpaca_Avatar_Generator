@@ -16,6 +16,7 @@ function ChoicesSection() {
       .then((response) => response.json())
       .then((data) => {
         setAllChoices(data);
+        console.log(data);
         let tempTypes = Object.keys(data);
         setTypes(tempTypes);
         setCurrentType(tempTypes[0]);
@@ -32,14 +33,33 @@ function ChoicesSection() {
       });
   }
 
-  const [allChoices, setAllChoices] = useState(() => {
-      init();
-    }, {}),
-    [types, setTypes] = useState([]),
+  const [allChoices, setAllChoices] = useState({
+      accessories: ["earings.png", "flower.png", "glasses.png", "headphone.png"],
+      backgrounds: ["blue50.png", "blue60.png", "blue70.png", "darkblue30.png", "darkblue50.png", "darkblue70.png", "green50.png", "green60.png", "green70.png", "grey40.png", "grey70.png", "grey80.png", "red50.png", "red60.png", "red70.png", "yellow50.png", "yellow60.png", "yellow70.png"],
+      ears: ["default-ear.png", "tilt-backward.png", "tilt-forward.png"],
+      eyes: ["angry.png", "default-eyes.png", "naughty.png", "panda.png", "smart.png", "star.png"],
+      hair: ["bang.png", "curls.png", "default.png", "elegant.png", "fancy.png", "quiff.png", "short.png"],
+      leg: ["bubble-tea.png", "cookie.png", "default-leg.png", "game-console.png", "tilt-backward.png", "tilt-forward.png"],
+      mouth: ["astonished.png", "default.png", "eating.png", "laugh.png", "tongue.png"],
+      neck: ["bend-backward.png", "bend-forward.png", "default-neck.png", "thick.png"],
+      nose: ["default-nose.png"],
+    }),
+    [types, setTypes] = useState(["accessories", "backgrounds", "ears", "eyes", "hair", "leg", "mouth", "neck", "nose"]),
     [values, setValues] = useState([]),
     [image, setImage] = useState({}),
-    [currentType, setCurrentType] = useState(""),
-    [currentValue, setCurrentValue] = useState("");
+    [currentType, setCurrentType] = useState("accessories"),
+    [currentValue, setCurrentValue] = useState("earings");
+
+  useEffect(() => {
+    let tempImage = {};
+    types.forEach((item) => {
+      const rand = Math.floor(Math.random() * allChoices[item].length);
+      const cand = allChoices[item][rand];
+      tempImage[item] = "alpaca/" + item + "/" + cand;
+      if (item === currentType) setCurrentValue(cand.substring(0, cand.lastIndexOf(".")));
+      setImage(tempImage);
+    });
+  }, []);
 
   useEffect(() => {
     if (image && Object.keys(image) && Object.keys(image).length)
